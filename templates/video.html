@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{%block static%} 
+<link rel="stylesheet" href="static\video\style.css">
+{%endblock static%}
+
+
+{%block body%}
+<div class = 'container'>
+    <h1>Video/Image Digit Recognization (MNIST)</h1>
+    <div class = 'row btn-block'>
+        <a id = "isVideo">Video</a>
+        <a id = "isImage" style = "display: none">Image</a>
+        <a href = "{{url_for('Home')}}">Draw</a>
+        <a href = "{{url_for('yolov8')}}">YOLO Digit Detection</a>
+    </div>
+    <div class="row">
+        <div class = "video_container col">
+            <video id="video" width="640" height="480" autoplay></video>
+            <canvas id="canvas1" width="640" height="480"></canvas>
+        </div>
+        <div class="col output_container">
+            <canvas id="canvas2" width="280" height="280"></canvas>
+            <div>
+                <span id="output_value">0</span>
+            </div>
+        </div>
+        
+    </div>
+    <div  class="btn-block row">
+        <a id="capture-btn">Capture Image</a>
+    </div>
+    
+    <!-- Display the progress bar  -->
+    <div class="mt-3" id="progress_bar">
+    </div>
+</div>
+
+{%endblock body%}
+
+
+{%block script%} 
+<script src="static\video\script.js"></script>
+{% endblock script %}

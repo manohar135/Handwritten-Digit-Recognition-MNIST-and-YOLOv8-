@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{%block static%} 
+<link rel="stylesheet" href="static\yolo\style.css">
+{%endblock static%}
+
+{%block body%}
+<div class = 'container'>
+    <h1>YOLOv8 Digit Detection</h1>
+    <div class = 'row btn-block'>
+        <a href = "{{url_for('video')}}">Image</a>
+        <a href = "{{url_for('Home')}}">Draw</a>
+    </div>
+    <div class="row">
+        <div class = "video_container col">
+            <video id="video" width="640" height="480" autoplay></video>
+            <canvas id="canvas1" width="640" height="480"></canvas>
+        </div>
+        <div class="col output_container">
+            <canvas id="canvas2" width="640" height="480"></canvas>
+        </div>
+        
+    </div>
+    <div  class="btn-block row">
+        <a id="capture-btn">Capture Image</a>
+    </div>
+</div>
+{%endblock body%}
+
+
+{%block script%} 
+<script src="static\yolo\script.js"></script>
+{% endblock script %}
